@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="modernForm">
+      <!-- <div class="imageSection">
+        <div class="image">
+          <div class="overlay"></div>
+          <img src="https://i.ibb.co/wRWNy8q/pexels-yuri-manei-2272854.jpg" alt="pexels-yuri-manei-2272854">
+        </div>
+        <div class="textInside">
+          <h1>Bring Your Music Along</h1>
+          <p class="tagLine">try Unlimited</p>
+        </div>
+        <div class="service">
+          <p><span class="price">$9.99</span> / Month</p>
+        </div>
+      </div>-->
+      <div class="contactForm">
+        <h1>Application Form</h1>
+        <form id="submit-form" class="php-email-form">
+          <div class="name">
+            <label for="fullName">Full Name:</label>
+            <input type="text" name="fullname" id="fullName" placeholder="ex: Lindsey" required/>
+            <div class="iconName"><i class="fa-solid fa-user"></i></div>
+          </div>
+          <div class="name">
+            <label for="secondName">Second Name:</label>
+            <input type="text" name="secondname" id="secondName" placeholder="ex: Wilson" required/>
+            <div class="iconName"><i class="fa-solid fa-user"></i></div>
+          </div>
+          <div class="name">
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" required />
+            <div class="iconName"><i class="fa-solid fa-envelope"></i></i></div>
+          </div>
+          <div class="name">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required />
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <div class="name">
+            <label for="experience">Education:</label>
+            <select name="Qualification" id="education" class="form-control">
+              <option value="-">Select your Qualification</option>
+              <option value="BA">Bachelor of Arts: BA.</option>
+              <option value="LLB">Bachelor of Laws: LLB.</option>
+              <option value="Bcom">Bachelor of Commerce: Bcom.</option>
+              <option value="BSc">Bachelor of Science: BSc.</option>
+              <option value="BMS">Bachelor of Management Studies: BMS.</option>
+              <option value="BBA">Bachelor of Business Administration: BBA.</option>
+              <option value="BTech">Bachelor of Technology: BTech.</option>
+              <option value="other">Others</option>   
+            </select>
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <div class="name">
+            <label for="experience">Experience:</label>
+            <input type="number" name="experience" id="experience" required />
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <div class="name">
+            <label for="skills">Skills:</label>
+            <input type="text" name="skills" id="skills" required />
+            <div class="iconName"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox" name="checkbox" required>
+            <label for="checkbox">By applying up, you agree to the
+             <p><a href="uipath.com">Companies Term of Service</p></label>
+          </div>
+          <input type="submit" value="Apply">
+        </form>
+      </div>
+    </div>
+  </body>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbxz9DYNnUhMLmzYZgfizkf-peu9mO5GoTtFEc7TTwIjRMzO0B9IV9hrt4juqhQxCj7D/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Succesfully Applied !")
+                alert("You can Connect Us on Social media")
+                //window.location.reload();
+                $("#submit-form")[0].reset();
+                //window.location.href="#contact"
+            },
+            error:function (err){
+                alert("Please Check your Connection")
+
+            }
+        })
+    })
+
+</script>
+
+</html>
