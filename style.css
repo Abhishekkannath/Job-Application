@@ -80,7 +80,7 @@ a:hover {
 input[type="email"],
 input[type="text"],
 input[type="number"],
-input[type="password"] {
+input[type="file"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
