@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Client - JOB APPLICATION</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
@@ -28,17 +29,17 @@
         <form id="submit-form" class="php-email-form">
           <div class="name">
             <label for="fullName">Full Name:</label>
-            <input type="text" name="fullname" id="fullName" placeholder="ex: Lindsey" required/>
+            <input type="text" name="fullname" id="fullName" placeholder="Mr./Ms." required/>
             <div class="iconName"><i class="fa-solid fa-user"></i></div>
           </div>
           <div class="name">
             <label for="secondName">Second Name:</label>
-            <input type="text" name="secondname" id="secondName" placeholder="ex: Wilson" required/>
+            <input type="text" name="secondname" id="secondName" required />
             <div class="iconName"><i class="fa-solid fa-user"></i></div>
           </div>
           <div class="name">
             <label for="email">Your Email:</label>
-            <input type="email" name="email" id="email" required />
+            <input type="email" name="email" id="email"  required/>
             <div class="iconName"><i class="fa-solid fa-envelope"></i></i></div>
           </div>
           <div class="name">
@@ -68,12 +69,12 @@
           </div>
           <div class="name">
             <label for="skills">Skills:</label>
-            <input type="text" name="skills" id="skills" required />
+            <input type="text" name="skills" id="skills" value="java" />
             <div class="iconName"><i class="fa-solid fa-lock"></i></div>
           </div>
           <div class="name">
             <label for="file">Resume: </label>
-            <input type="file" onchange="LoadFile(event)" name="file" id="file" required />
+            <input type="file" name="file" accept="application/pdf" onchange="LoadFile(event)"  id="file"  />
             <input type="hidden" id="fileData" name="fileData" />
             <input type="hidden" id="mimeType" name="mimeType" />
             <input type="hidden" id="fileName" name="fileName" />
@@ -86,8 +87,10 @@
           </div>
           <input type="submit" value="Apply">
         </form>
+        
       </div>
     </div>
+    
   </body>
 
  
@@ -120,7 +123,7 @@
     $("#submit-form").submit((e)=>{
         e.preventDefault()
         $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbxz9DYNnUhMLmzYZgfizkf-peu9mO5GoTtFEc7TTwIjRMzO0B9IV9hrt4juqhQxCj7D/exec",
+            url:"https://script.google.com/macros/s/AKfycbx5H5U3jRjq0xvFA7POuwT56x7HHF0vPqgtQMzifV69xmm--XZQDrr05HmYZikM5u1Q/exec",
             data:$("#submit-form").serialize(),
             method:"post",
             success:function (response){
@@ -131,7 +134,10 @@
                 //window.location.href="#contact"
             },
             error:function (err){
-                alert("Please Check your Connection")
+              alert("Succesfully Applied !")
+          
+                //window.location.reload();
+                $("#submit-form")[0].reset();
 
             }
         })
@@ -140,3 +146,6 @@
 </script>
 
 </html>
+
+
+
