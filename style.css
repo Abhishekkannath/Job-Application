@@ -5,11 +5,25 @@
   box-sizing: border-box;
 }
 body {
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 19%, rgba(0,212,255,1) 100%); 
-  font-family: "Open Sans", sans-serif;
-  min-height: 90vh;
+  background: linear-gradient(45deg, #083346, #046C95, #0196C1, #48B5D6);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 img {
   width: 100%;
   border-bottom-left-radius: 10px;
@@ -18,18 +32,18 @@ img {
 }
 a {
   margin-left: 30px;
-  color: #3c63cc;
+  color: #083346;
   font-weight: 600;
 }
 a:hover {
   margin-left: 30px;
-  color: #2fa1fd;
+  color: #0f5777;
 }
 .modernForm {
-  max-width: 1200px;
+  max-width: 900px;
   display: flex;
   margin: 100px auto;
-  background-color: #fff;
+  background-color: #e3f1f6;
   border-radius: 10px;
 }
 .imageSection {
@@ -72,20 +86,22 @@ a:hover {
 .contactForm {
   flex-basis: 45%;
   margin: auto;
-  color: #555;
+  color: #083346;
   padding-left: 30px;
 }
 .contactForm h1 {
-  padding: 15px 0;
+  padding: 30px 0;
 }
 input[type="email"],
 input[type="text"],
 input[type="number"],
-input[type="file"] {
+input[type="file"],
+input[type="date"],
+input[type="tel"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: rgb(177, 177, 177) 1px solid;
+  border: #b2ddec 1px solid;
   margin-top: 10px;
 }
 .form-control{
@@ -93,7 +109,7 @@ input[type="file"] {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: rgb(177, 177, 177) 1px solid;
+    border: #b2ddec 1px solid;
     margin-top: 10px;
   
 }
@@ -111,7 +127,7 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 input[type="submit"] {
-  background-color: #3c63cc;
+  background-color: #083346;
   font-size: 1rem;
   border: none;
   color: white;
@@ -123,7 +139,7 @@ input[type="submit"] {
   float: left;
 }
 input[type="submit"]:hover {
-  background-color: #2fa1fd;
+  background-color: #0f5777;
 }
 
 @media only screen and (max-width: 768px) {
@@ -143,4 +159,115 @@ input[type="submit"]:hover {
   .contactForm {
     padding-right: 30px;
   }
+}
+
+.new {
+  display: flex;
+flex-direction: column
+}
+
+.nice-select,
+.nice-select.open .list {
+  width: 100%;
+}
+
+.nice-select .list::-webkit-scrollbar {
+    width: 0
+}
+
+.nice-select .list {
+    margin-top: 5px;
+    top: 100%;
+    border-top: 0;
+    border-radius: 0 0 5px 5px;
+    
+    overflow-y: scroll;
+    padding: 0px 2px 0;
+    height: 25px;
+}
+
+.nice-select.has-multiple {
+    white-space: inherit;
+    height: auto;
+    padding: 7px 12px;
+    min-height: 53px;
+    line-height: 22px;
+    background: white;
+}
+
+.nice-select.has-multiple span.current {
+    border: 1px solid #CCC;
+    background: #EEE;
+    padding: 0 10px;
+    border-radius: 3px;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-right: 3px
+}
+
+.nice-select.has-multiple .multiple-options {
+    display: block;
+    line-height: 37px;
+    margin-left: 30px;
+    padding: 0
+}
+
+.nice-select .nice-select-search-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+    top: 100%;
+    left: 0;
+    z-index: 8;
+    padding: 5px;
+    background: #FFF;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 0 1px rgba(68, 88, 112, .11);
+    -webkit-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: scale(.75) translateY(-21px);
+    -ms-transform: scale(.75) translateY(-21px);
+    transform: scale(.75) translateY(-21px);
+    -webkit-transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out;
+    transition: all .2s cubic-bezier(.5, 0, 0, 1.25), opacity .15s ease-out
+}
+
+.nice-select .nice-select-search {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 7px 12px;
+    margin: 0 10px 0 0;
+    width: 100%!important;
+    min-height: 36px;
+    line-height: 22px;
+    height: auto;
+    outline: 0!important
+}
+
+.nice-select.open .nice-select-search-box {
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0)
+}
+
+.remove{
+  color: #0196C1
+}
+.remove:hover {
+  color: red
 }
