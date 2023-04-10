@@ -17,13 +17,16 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <img src="logo.png" class="img1" alt="">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+        <img src="logo.png" class="img1" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> Home</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="404.html">Find Jobs</a>
               </li>
@@ -36,11 +39,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="404.html">Register</a>
               </li>
-            </ul>
-          </div>
+          </ul>
+          
         </div>
       </nav>
-      
+
+
     <div class="register">
         <div class="row">
             <div class="col-md-3 register-left">
@@ -102,6 +106,7 @@
 
                                     <div class="form-group">
                                         <select name="Qualification" placeholder="Education" id="education" class="form-control">
+                                            <option class="hidden"  selected disabled >--Educational Qualification--</option>
                                             <option value="BArch">Bachelor of Architecture: BArch.</option>
                                             <option value="BAS">Bachelor of Applied Science: BAS.</option>
                                             <option value="BA">Bachelor of Arts: BA.</option>
