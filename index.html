@@ -284,7 +284,7 @@ $.fn.niceSelect = function(method) {
                 $selected_html += '<span class="current">' + $selected_text + '</span>';
             });
             $select_placeholder = $select.data('js-placeholder') || $select.attr('js-placeholder');
-            $select_placeholder = !$select_placeholder ? 'Select your Skills<B> ￫</B>eg: Java, Python, C++..' : $select_placeholder;
+            $select_placeholder = !$select_placeholder ? 'Select your Skills<B> ￫</B>' : $select_placeholder;
             $selected_html = $selected_html === '' ? $select_placeholder : $selected_html;
             $dropdown.find('.multiple-options').html($selected_html);
         } else {
